@@ -1,0 +1,95 @@
+[
+  {
+    "id": "DCS-01",
+    "case_title": "Bipolar I Disorder, Acute Manic Episode with Psychosis",
+    "ehr_notes": {
+      "admission_hp": "ADMISSION H&P:\nPATIENT: Synthetic Patient A (DOB: 05/12/1988)\nDATE OF ADMISSION: 10/01/2026\nLEGAL STATUS: Involuntary 5150 72-hour hold for grave disability.\nHPI: 38yo male with Bipolar I disorder admitted after 5 nights of total insomnia, hyperverbal speech, and grandiose delusions of founding three biotech companies overnight. Flushed baseline lithium carbonate 10 days prior.\nADMISSION LABS: Lithium level < 0.2 mEq/L, CBC normal, BMP normal, UDS negative.\nADMISSION MEDS STARTED: Lithium carbonate 600 mg PO BID, Olanzapine 10 mg PO QHS, Lorazepam 1 mg PO TID PRN severe agitation.",
+      "interval_progress": "INTERVAL PROGRESS NOTES:\nDAY 2 (10/03/2026): Patient calmer, slept 7 hours. No PRN lorazepam required in past 24 hours. Lithium 600 mg BID continued.\nDAY 4 (10/05/2026): 5150 expired; patient signed voluntary admission agreement. Lithium trough level 0.8 mEq/L (therapeutic range 0.6-1.2 mEq/L). Olanzapine reduced to 5 mg PO QHS due to morning sedation.",
+      "discharge_plan": "DISCHARGE PLAN (10/08/2026):\nDISCHARGE MEDICATIONS:\n1. Lithium carbonate 600 mg PO BID (30-day supply, #60)\n2. Olanzapine 5 mg PO QHS (30-day supply, #30)\nNOTE: Lorazepam PRN was discontinued on Day 3 and is NOT prescribed at discharge.\nFOLLOW-UP: Outpatient psychiatry clinic appointment on 10/15/2026 at 10:00 AM. Repeat BMP and lithium level on 10/22/2026."
+    },
+    "ground_truth": {
+      "legal_status": "Involuntary 5150 transitioned to Voluntary",
+      "discharge_medications": [
+        "Lithium carbonate 600 mg PO BID",
+        "Olanzapine 5 mg PO QHS"
+      ],
+      "forbidden_discharge_meds": [
+        "Lorazepam",
+        "Ativan",
+        "Lithium 300 mg",
+        "Lithium 900 mg",
+        "Olanzapine 10 mg"
+      ],
+      "forbidden_global": [
+        "5250"
+      ],
+      "required_facts": [
+        "5150",
+        "voluntary",
+        "Lithium carbonate 600 mg",
+        "Olanzapine 5 mg",
+        "0.8"
+      ]
+    }
+  },
+  {
+    "id": "DCS-02",
+    "case_title": "Treatment-Resistant Schizoaffective Disorder, Clozapine Titration",
+    "ehr_notes": {
+      "admission_hp": "ADMISSION H&P:\nPATIENT: Synthetic Patient B (DOB: 11/24/1992)\nDATE OF ADMISSION: 09/15/2026\nLEGAL STATUS: Voluntary admission.\nHPI: 33yo female with treatment-resistant schizoaffective disorder, bipolar type, failing prior adequate trials of risperidone and aripiprazole. Admitted for monitored clozapine initiation.\nBASELINE LABS: Absolute Neutrophil Count (ANC) 3,400 /mcL (normal >= 1,500), Troponin negative, ECG QTc 418 ms.",
+      "interval_progress": "INTERVAL PROGRESS NOTES:\nDAY 7 (09/22/2026): Clozapine titrated to 100 mg PO QHS. Weekly CBC/ANC: ANC 2,800 /mcL.\nDAY 14 (09/29/2026): Clozapine increased to 150 mg PO QHS. Weekly CBC/ANC: ANC 2,400 /mcL. Vitals stable, temp 98.4 F, resting heart rate 82 bpm.",
+      "discharge_plan": "DISCHARGE PLAN (10/06/2026):\nDISCHARGE MEDICATIONS:\n1. Clozapine 150 mg PO QHS (7-day supply only, REMS registry requirement)\nFOLLOW-UP: Mandatory weekly ANC draw on 10/13/2026 before pharmacy can dispense next 7-day supply. Outpatient visit 10/14/2026."
+    },
+    "ground_truth": {
+      "legal_status": "Voluntary",
+      "discharge_medications": [
+        "Clozapine 150 mg PO QHS"
+      ],
+      "forbidden_discharge_meds": [
+        "30-day supply",
+        "Clozapine 300 mg",
+        "Clozapine 100 mg"
+      ],
+      "forbidden_global": [
+        "Agranulocytosis",
+        "5150",
+        "5250"
+      ],
+      "required_facts": [
+        "Voluntary",
+        "Clozapine 150 mg",
+        "weekly ANC",
+        "7-day"
+      ]
+    }
+  },
+  {
+    "id": "DCS-03",
+    "case_title": "Severe Major Depressive Disorder with Suicidal Ideation",
+    "ehr_notes": {
+      "admission_hp": "ADMISSION H&P:\nPATIENT: Synthetic Patient C (DOB: 03/18/1999)\nDATE OF ADMISSION: 10/10/2026\nLEGAL STATUS: Involuntary 5150 hold for danger to self.\nHPI: 27yo female presenting with severe unipolar major depression, psychomotor retardation, and active suicidal ideation with a plan. No prior manic or hypomanic episodes.\nADMISSION MEDS: Started Sertraline 50 mg PO daily, titrated to 100 mg PO daily on Day 4. Hydroxyzine 25 mg PO TID PRN anxiety.",
+      "interval_progress": "INTERVAL PROGRESS NOTES:\nDAY 3 (10/13/2026): Patient denies active suicidal ideation, contract for safety established. 5150 hold discontinued by attending psychiatrist; voluntary status maintained.\nDAY 5 (10/15/2026): Sertraline 100 mg daily tolerated well. Patient completed safety plan with social work.",
+      "discharge_plan": "DISCHARGE PLAN (10/18/2026):\nDISCHARGE MEDICATIONS:\n1. Sertraline 100 mg PO daily (#30)\nNOTE: Hydroxyzine PRN was discontinued prior to discharge.\nFOLLOW-UP: Intensive Outpatient Program (IOP) starting 10/20/2026 at 9:00 AM."
+    },
+    "ground_truth": {
+      "legal_status": "5150 discontinued to Voluntary",
+      "discharge_medications": [
+        "Sertraline 100 mg PO daily"
+      ],
+      "forbidden_discharge_meds": [
+        "Hydroxyzine",
+        "Sertraline 50 mg",
+        "Sertraline 200 mg"
+      ],
+      "forbidden_global": [
+        "Bipolar",
+        "5250"
+      ],
+      "required_facts": [
+        "Sertraline 100 mg",
+        "5150",
+        "safety plan"
+      ]
+    }
+  }
+]
